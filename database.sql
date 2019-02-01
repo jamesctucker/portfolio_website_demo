@@ -16,3 +16,6 @@ CREATE TABLE "projects" (
 
 INSERT INTO "tags" ("name") 
 VALUES ('React'), ('jQuery'), ('Node'), ('SQL'), ('Redux'), ('HTML');
+
+INSERT INTO "projects" ("name", "description", "thumbnail", "website", "github", "date_completed", "tag_id")
+VALUES
