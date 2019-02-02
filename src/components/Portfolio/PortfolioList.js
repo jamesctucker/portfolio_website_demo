@@ -23,16 +23,16 @@ class PortfolioList extends Component {
                             alt=''
                             className='card-media'
                             height='200'
-                            image={this.props.projects.thumbnail} // this is where the project image will go
-                            title={this.props.projects.name}
+                            image={this.props.results.thumbnail} // this is where the project image will go
+                            title={this.props.results.name}
                         />
                         <CardContent>
                             <Typography gutterBottom variant='h5' component='h2'>
-                                {this.props.projects.name}
+                                {this.props.results.name}
                                 {/* this is where the project title will go */}
                             </Typography>
                             <Typography component="p">
-                                {this.props.projects.name}
+                                {this.props.results.description}
                                 {/* this is where the project description will go */}
                             </Typography>
                         </CardContent>
