@@ -3,12 +3,25 @@
 }
 
 
-.App-header {
+#app-header {
   background-color: #222;
-  height: 150px;
+  height: 125px;
   padding: 20px;
   color: white;
 }
+
+/* #header-text {
+  float: left;
+  padding: 10px;
+}
+
+#drawer {
+  float:left;
+} */
+
+/* #header-container {
+  float: left;
+} */
 
 .App-title {
   font-size: 1.5em;
