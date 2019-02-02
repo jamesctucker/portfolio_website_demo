@@ -28,13 +28,15 @@ class PortfolioPage extends Component {
 
     render() {
         return (
-            <Paper id='results-paper' elevation={3}>
-                <Grid container spacing={24}>
-                    {this.props.reduxStore.projects.map((results, i) => (
-                        <PortfolioList key={i} results={results} />
-                    ))}
-                </Grid>
-            </Paper>
+            <div>
+                <Paper id='project-paper' elevation={3}>
+                    <Grid container spacing={8}>
+                        {this.props.reduxStore.projects.map((results, i) => (
+                            <PortfolioList key={i} results={results} />
+                        ))}
+                    </Grid>
+                </Paper>
+            </div>
         )
     }
 }
