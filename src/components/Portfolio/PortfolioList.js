@@ -23,19 +23,24 @@ class PortfolioList extends Component {
                     <CardActionArea>
                         <CardMedia
                             component='img'
-                            alt=''
+                            alt='test'
                             className='card-media'
                             height='200'
                             width='200'
-                            image={this.props.results.thumbnail} // this is where the project image will go
+                            img={this.props.results.thumbnail} // this is where the project image will go
                             title={this.props.results.name}
                         />
                         <CardContent>
-                            <Typography gutterBottom variant='h5' component='h2'>
+                            <Typography id='project-name' gutterBottom variant='h5' component='h2'>
                                 {this.props.results.name}
                                 {/* this is where the project title will go */}
                             </Typography>
-                            <Typography component="p">
+                            <Typography id='project-tag' component='p'>
+                                {this.props.results.tag_id}
+                                {/* this is where the project title will go */}
+                            </Typography>
+                            <br />
+                            <Typography id='project-description' component="p">
                                 {this.props.results.description}
                                 {/* this is where the project description will go */}
                             </Typography>
@@ -43,13 +48,13 @@ class PortfolioList extends Component {
                     </CardActionArea>
                     <CardActions>
                         {/* link will eventually be {this.props.results.github} */}
-                        <Link target='_blank' rel='noopener noreferrer' href='https://www.bbc.com/' variant='contained'>
+                        <Link target='_blank' rel='noopener noreferrer' href={this.props.results.github} variant='contained'>
                             <Button size="small" color="primary">
                                 Github
                             </Button>
                         </Link>
                         {/* link will eventually be {this.props.results.website} */}
-                        <Link target='_blank' rel='noopener noreferrer' href='https://www.bbc.com/' variant='contained'>
+                        <Link target='_blank' rel='noopener noreferrer' href={this.props.results.github} variant='contained'>
                             <Button size="small" color="primary">
                                 Website
                             </Button>

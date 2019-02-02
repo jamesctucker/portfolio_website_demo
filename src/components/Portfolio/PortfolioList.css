@@ -6,3 +6,17 @@
 .card-media {
     height: 200px;
 }
+
+#project-name {
+    text-align: left;
+}
+
+#project-description {
+    text-align: justify;
+    text-justify: auto;
+}
+
+#project-tag {
+    text-align: justify;
+    text-justify: auto;
+}
