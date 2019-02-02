@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import PortfolioPage from './../Portfolio/PortfolioPage';
 
 class App extends Component {
   // Renders the entire app on the DOM

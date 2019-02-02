@@ -9,14 +9,29 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
-
+import { takeEvery, put } from 'redux-saga/effects';
+import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
-
+    yield takeEvery('FETCH_PROJECTS', fetchProjects);
 }
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
+
+// this saga retrieves projects from the server
+function* fetchProjects() {
+    try {
+        const projectResponse = yield axios.get(`/portfolio`);
+        const nextAction = { type: 'SET_PROJECTS', payload: projectResponse.data };
+        yield put(nextAction);
+    } catch (error) {
+        console.log('error in fetchProjects', error);
+        alert('something went wrong');
+    }
+}
+
+
 
 // Used to store projects returned from the server
 const projects = (state = [], action) => {
@@ -51,6 +66,6 @@ const storeInstance = createStore(
 // Pass rootSaga into our sagaMiddleware
 sagaMiddleware.run(rootSaga);
 
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, 
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>,
     document.getElementById('root'));
 registerServiceWorker();
