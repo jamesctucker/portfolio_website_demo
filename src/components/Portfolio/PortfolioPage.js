@@ -10,6 +10,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+
 
 class PortfolioPage extends Component {
     // component dispatches an action that requests projects from database
@@ -25,12 +27,14 @@ class PortfolioPage extends Component {
 
 
     render() {
-       return (
-        <Grid>
-
-        </Grid>
-
-
+        return (
+            <Paper id='results-paper' elevation={3}>
+                <Grid container spacing={24}>
+                    {this.props.reduxStore.projects.map((results, i) => (
+                        <PortfolioList key={i} results={results} />
+                    ))}
+                </Grid>
+            </Paper>
         )
     }
 }
