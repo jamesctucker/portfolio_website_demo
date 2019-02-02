@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './PortfolioList.css';
 // import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -10,12 +11,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+
 
 class PortfolioList extends Component {
 
     render() {
         return (
-            <Grid container spacing={24}>
+            <Grid item md={3}>
                 <Card className="project-card">
                     <CardActionArea>
                         <CardMedia
@@ -23,6 +26,7 @@ class PortfolioList extends Component {
                             alt=''
                             className='card-media'
                             height='200'
+                            width='200'
                             image={this.props.results.thumbnail} // this is where the project image will go
                             title={this.props.results.name}
                         />
@@ -38,13 +42,22 @@ class PortfolioList extends Component {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="small" color="primary">
-                            Github
-                </Button>
-                        <Button size="small" color="primary">
-                            Website
-                </Button>
+                        <Link target='_blank' rel='noopener noreferrer' href='https://www.bbc.com/' variant='contained'>
+                            <Button size="small" color="primary">
+                                Github
+                            </Button>
+                        </Link>
+                        <Link target='_blank' rel='noopener noreferrer' href='https://www.bbc.com/' variant='contained'>
+                            <Button size="small" color="primary">
+                                Website
+                            </Button>
+                        </Link>
+                        <Typography component='p'>
+                            {this.props.results.tag_id}
+                            {/* this is where the project title will go */}
+                        </Typography>
                     </CardActions>
+
                 </Card>
             </Grid>
         )
