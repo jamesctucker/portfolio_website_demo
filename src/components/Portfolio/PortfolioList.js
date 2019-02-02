@@ -42,11 +42,13 @@ class PortfolioList extends Component {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
+                        {/* link will eventually be {this.props.results.github} */}
                         <Link target='_blank' rel='noopener noreferrer' href='https://www.bbc.com/' variant='contained'>
                             <Button size="small" color="primary">
                                 Github
                             </Button>
                         </Link>
+                        {/* link will eventually be {this.props.results.website} */}
                         <Link target='_blank' rel='noopener noreferrer' href='https://www.bbc.com/' variant='contained'>
                             <Button size="small" color="primary">
                                 Website
