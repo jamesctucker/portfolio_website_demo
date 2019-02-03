@@ -1,5 +1,6 @@
-.project-card {
-    max-width: 345;
+#project-card {
+    max-width: 400px;
+    height: 450px;
     margin: 10px;
 }
 

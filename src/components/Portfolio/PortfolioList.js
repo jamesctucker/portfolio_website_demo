@@ -5,6 +5,7 @@ import './PortfolioList.css';
 // import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -19,15 +20,16 @@ class PortfolioList extends Component {
     render() {
         return (
             <Grid item md={3}>
-                <Card className="project-card">
+                <Card id="project-card">
+                    {/* {JSON.stringify(this.props.results.thumbnail)} */}
                     <CardActionArea>
                         <CardMedia
                             component='img'
                             alt='test'
-                            className='card-media'
-                            height='200'
-                            width='200'
-                            src={this.props.results.thumbnail} // this is where the project image will go
+                            id='card-media'
+                            height='150'
+                            width='175'
+                            image={this.props.results.thumbnail} // this is where the project image will go
                             title={this.props.results.name}
                         />
                         <CardContent>
@@ -59,10 +61,6 @@ class PortfolioList extends Component {
                                 Website
                             </Button>
                         </Link>
-                        <Typography component='p'>
-                            {this.props.results.tag_id}
-                            {/* this is where the project title will go */}
-                        </Typography>
                     </CardActions>
 
                 </Card>
