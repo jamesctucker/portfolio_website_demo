@@ -26,7 +26,7 @@ class PortfolioPage extends Component {
             <div>
                 <Header />
                 <Paper id='project-paper' elevation={3}>
-                    <Grid container spacing={8}>
+                    <Grid container spacing={32}>
                         {this.props.reduxStore.projects.map((results, i) => (
                             <PortfolioList key={i} results={results} />
                         ))}

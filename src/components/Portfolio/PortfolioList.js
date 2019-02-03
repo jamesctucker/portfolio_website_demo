@@ -19,7 +19,7 @@ class PortfolioList extends Component {
 
     render() {
         return (
-            <Grid item md={3}>
+            <Grid item lg={3}>
                 <Card id="project-card">
                     {/* {JSON.stringify(this.props.results.thumbnail)} */}
                     <CardActionArea>
