@@ -11,6 +11,14 @@
   color: white;
 }
 
+#app-footer {
+  background-color: royalblue;
+  height: 125px;
+  padding: 20px;
+  margin-top: 35px;
+  color: white;
+}
+
 /* #header-text {
   float: left;
   padding: 10px;

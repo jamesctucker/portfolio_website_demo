@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PortfolioList from './PortfolioList';
 import Header from './../Header/Header';
+import Footer from './../Footer/Footer';
 import './PortfolioPage.css';
 // import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
@@ -32,6 +33,7 @@ class PortfolioPage extends Component {
                         ))}
                     </Grid>
                 </Paper>
+                <Footer />
             </div>
         )
     }
