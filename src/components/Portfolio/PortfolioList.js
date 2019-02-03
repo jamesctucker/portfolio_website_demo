@@ -27,7 +27,7 @@ class PortfolioList extends Component {
                             className='card-media'
                             height='200'
                             width='200'
-                            img={this.props.results.thumbnail} // this is where the project image will go
+                            src={this.props.results.thumbnail} // this is where the project image will go
                             title={this.props.results.name}
                         />
                         <CardContent>
