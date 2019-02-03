@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PortfolioList from './PortfolioList';
+import Header from './../Header/Header';
+import './PortfolioPage.css';
 // import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -22,6 +24,7 @@ class PortfolioPage extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <Paper id='project-paper' elevation={3}>
                     <Grid container spacing={8}>
                         {this.props.reduxStore.projects.map((results, i) => (
