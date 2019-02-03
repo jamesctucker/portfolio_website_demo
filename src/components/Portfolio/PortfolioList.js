@@ -27,8 +27,6 @@ class PortfolioList extends Component {
                             component='img'
                             alt='test'
                             id='card-media'
-                            height='150'
-                            width='175'
                             image={this.props.results.thumbnail} // this is where the project image will go
                             title={this.props.results.name}
                         />
@@ -41,7 +39,6 @@ class PortfolioList extends Component {
                                 {this.props.results.tag_id}
                                 {/* this is where the project title will go */}
                             </Typography>
-                            <br />
                             <Typography id='project-description' component="p">
                                 {this.props.results.description}
                                 {/* this is where the project description will go */}
@@ -51,13 +48,13 @@ class PortfolioList extends Component {
                     <CardActions>
                         {/* link will eventually be {this.props.results.github} */}
                         <Link target='_blank' rel='noopener noreferrer' href={this.props.results.github} variant='contained'>
-                            <Button size="small" color="primary">
+                            <Button size="small" color="primary" id='github-btn'>
                                 Github
                             </Button>
                         </Link>
                         {/* link will eventually be {this.props.results.website} */}
-                        <Link target='_blank' rel='noopener noreferrer' href={this.props.results.github} variant='contained'>
-                            <Button size="small" color="primary">
+                        <Link target='_blank' rel='noopener noreferrer' href={this.props.results.website} variant='contained'>
+                            <Button size="small" color="primary" id='website-btn'>
                                 Website
                             </Button>
                         </Link>
