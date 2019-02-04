@@ -23,10 +23,9 @@
     
 }
 
-#project-tag {
-    text-align: justify;
-    text-justify: auto;
-    padding: 3px;
+#tag-chip {
+    float: left;
+    padding: 2px;
 
 }
 

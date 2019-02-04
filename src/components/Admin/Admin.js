@@ -10,6 +10,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import { Home } from '@material-ui/icons';
 
 
 
@@ -35,7 +36,7 @@ class Admin extends Component {
                     <h1>Admin</h1>
                 </header>
                 <div>
-                    <Button onClick={this.handleNavigate} variant='contained'>Return To Main Page</Button>
+                    <Button onClick={this.handleNavigate} variant='contained'><Home /></Button>
                     <TextFields />
                 </div>
                 <div>

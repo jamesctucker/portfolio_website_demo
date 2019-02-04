@@ -7,6 +7,8 @@ import Divider from '@material-ui/core/Divider';
 import ImageAvatar from './../Portfolio/ImageAvatar';
 import Typography from '@material-ui/core/Typography';
 import './Drawer.css';
+import { Face } from '@material-ui/icons';
+
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
 // import MailIcon from '@material-ui/icons/Mail';
 
@@ -48,7 +50,7 @@ class TemporaryDrawer extends React.Component {
 
         return (
             <div>
-                <Button variant='contained' onClick={this.toggleDrawer('right', true)}>About</Button>
+                <Button variant='contained' onClick={this.toggleDrawer('right', true)}>About <Face /></Button>
                 <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
                     <div
                         tabIndex={0}
