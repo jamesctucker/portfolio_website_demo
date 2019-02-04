@@ -38,7 +38,7 @@ class Admin extends Component {
                     <TextFields />
                 </div>
                 <div>
-                    <Paper elevation={3}>
+                    <Paper id='admin-paper' elevation={3}>
                         <Typography variant='h6'>
                             Project List
                         </Typography>

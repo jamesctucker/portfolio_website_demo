@@ -6,3 +6,30 @@
     color: white;
 }
 
+#admin-paper {
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* #input-form {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 30px;
+} */
+
+#text-paper {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 30px;
+    padding: 20px;
+
+}
+
+#submit-btn {
+    width: 100px;
+    height: 50px;
+    padding: 20px;
+    margin: 20px;
+}
