@@ -6,6 +6,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+
+
 import './Admin.css';
 
 const styles = theme => ({
@@ -123,7 +127,11 @@ class TextFields extends Component {
 
         return (
             <Paper id='text-paper' elevation={3}>
+                <Typography id='form-title' variant='h6'>
+                    Add A Project
+                    </Typography>
                 <form id='input-form' className={classes.container} noValidate autoComplete="off">
+
                     <TextField
                         required
                         id="outlined-name"
