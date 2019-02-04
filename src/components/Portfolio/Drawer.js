@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import ImageAvatar from './../Portfolio/ImageAvatar';
 import Typography from '@material-ui/core/Typography';
+import './Drawer.css';
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
 // import MailIcon from '@material-ui/icons/Mail';
 
@@ -37,39 +38,17 @@ class TemporaryDrawer extends React.Component {
                     About James
                 </Typography>
                 <br />
-                <Typography align='center' variant='body1'>
-                    James loves whiskey.
+                <Typography id='about-me' align='center' variant='body1'>
+                    James is a software developer from Minnesota.
                 </Typography>
                 <Divider variant='middle' />
 
             </div>
         );
 
-        // const fullList = (
-        //     <div className={classes.fullList}>
-        //         <List>
-        //             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-        //                 <ListItem button key={text}>
-        //                     {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-        //                     <ListItemText primary={text} />
-        //                 </ListItem>
-        //             ))}
-        //         </List>
-        //         <Divider />
-        //         <List>
-        //             {['All mail', 'Trash', 'Spam'].map((text, index) => (
-        //                 <ListItem button key={text}>
-        //                     {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-        //                     <ListItemText primary={text} />
-        //                 </ListItem>
-        //             ))}
-        //         </List>
-        //     </div>
-        // );
-
         return (
             <div>
-                <Button variant='contained' onClick={this.toggleDrawer('right', true)}>About Me</Button>
+                <Button variant='contained' onClick={this.toggleDrawer('right', true)}>About</Button>
                 <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
                     <div
                         tabIndex={0}

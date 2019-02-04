@@ -29,5 +29,9 @@ Results are then rendered on the user interface, and users can then favorite whi
 in a separate ''page'' where the user can categorize each favorited gif. All of this data is stored in a database.', './../images/GiphyThumbnail.png', 
 'https://fierce-bayou-69537.herokuapp.com/', 'https://github.com/adunahee/giffers-giphy-group-project', '2019-02-01', '5');
 
+INSERT INTO "projects"("title", "description", "website", "github", "tag_id") VALUES(3, 'Data Stealing App', 
+'This app steals your most important info and sells it to the highest bidder. You should have read our terms of use more closely.', 
+'Website URL (Optional)', 'espn.com', '3');
 
-
+INSERT INTO "projects"("title", "description", "website", "github", "tag_id") VALUES(4, 'Generic App', 'This app does stuff. ', 
+'Website URL (Optional)', 'bbc.com', '6');

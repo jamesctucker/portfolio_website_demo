@@ -30,12 +30,12 @@ class PortfolioList extends Component {
                             title={this.props.results.name}
                         />
                         <CardContent>
-                            <Typography id='project-name' gutterBottom variant='h5' component='h2'>
+                            <Typography id='project-name' variant='h6' >
                                 {this.props.results.title}
                                 {/* this is where the project title will go */}
                             </Typography>
-                            <Typography id='project-tag' component='p'>
-                                {this.props.results.name}
+                            <Typography id='project-tag' variant='p'>
+                                [{this.props.results.name}]
                                 {/* this is where the project title will go */}
                             </Typography>
                             <Typography id='project-description' component="p">

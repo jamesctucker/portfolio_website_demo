@@ -8,7 +8,7 @@ class Header extends Component {
         return (
             <header id='app-header'>
                 <div id='header-container'>
-                    <h1 id='header-text'>My Portfolio</h1><Drawer />
+                    <h1 id='header-text'>James Tucker</h1><Drawer />
                 </div>
             </header>
         )

@@ -112,6 +112,7 @@ class TextFields extends Component {
         event.preventDefault();
         const action = ({ type: 'ADD_PROJECT', payload: this.state });
         this.props.dispatch(action);
+        alert('You have successfully added a project!');
         this.setState({
             name: 'Project Name',
             date: 'Date (YYYY/MM/DD)',
