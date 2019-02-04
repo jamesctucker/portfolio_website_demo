@@ -16,6 +16,7 @@ function* rootSaga() {
     yield takeEvery('FETCH_PROJECTS', fetchProjects);
     yield takeEvery('ADD_PROJECT', addProject);
     yield takeEvery('GET_TAGS', getTags)
+    yield takeEvery('DELETE_PROJECT', deleteProject);
 }
 
 // Create sagaMiddleware
@@ -47,11 +48,20 @@ function* addProject(action) {
 function* getTags(action) {
     try {
         const response = yield axios.get('/');
-        const tags = { type: 'SET_TAGS', payload: response.data };
-        yield put(tags);
+        const nextAction = { type: 'SET_TAGS', payload: response.data };
+        yield put(nextAction);
     } catch (error) {
-        console.log('Error gettings tags.');
-        alert('there was a problem getting tags.')
+        console.log('Error with gettings tags saga.');
+    }
+}
+
+function* deleteProject(action) {
+    try {
+        yield axios.delete(`/delete/${action.payload.id}`);
+        const nextAction = { type: 'FETCH_PROJECTS' };
+        yield put(nextAction);
+    } catch (error) {
+        console.log(`Problem with deleting project saga: ${error}`);
     }
 }
 

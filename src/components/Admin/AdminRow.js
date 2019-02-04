@@ -7,9 +7,15 @@ import Button from '@material-ui/core/Button';
 
 class AdminRow extends Component {
 
-    deleteProject = () => {
-        const action = ({ type: 'DELETE_PROJECT', payload: this.props.project });
+    getProjects = () => {
+        const action = { type: 'FETCH_PROJECTS' };
         this.props.dispatch(action);
+    }
+
+    deleteProject = () => {
+        const action = ({ type: 'DELETE_PROJECT', payload: this.props.project});
+        this.props.dispatch(action);
+        this.getProjects();
     }
 
     render() {

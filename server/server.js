@@ -15,6 +15,9 @@ app.use('/portfolio', portfolioRouter);
 const adminRouter = require('./routes/admin_router.js');
 app.use('/text-fields', adminRouter);
 
+const deleteRouter = require('./routes/delete_router.js');
+app.use('/delete', deleteRouter);
+
 /** ---------- START SERVER ---------- **/
 app.listen(port, function () {
     console.log('Listening on port: ', port);
