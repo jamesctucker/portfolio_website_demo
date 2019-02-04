@@ -13,6 +13,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Chip from '@material-ui/core/Chip';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 
 class PortfolioList extends Component {
@@ -54,15 +56,18 @@ class PortfolioList extends Component {
                                 Website
                             </Button>
                         </Link>
-                        <Chip
-                            label={this.props.results.name}
-                            variant='outlined'
-                            id='tag-chip'
-                        />
+                        <Tooltip title='The main technology used'>
+                            <Chip
+
+                                label={this.props.results.name}
+                                variant='outlined'
+                                id='tag-chip'
+                            />
+                        </Tooltip>
                     </CardActions>
 
                 </Card>
-            </Grid>
+            </Grid >
         )
     }
 }

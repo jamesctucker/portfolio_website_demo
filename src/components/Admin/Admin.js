@@ -11,6 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { Home } from '@material-ui/icons';
+import Tooltip from '@material-ui/core/Tooltip';
 
 
 
@@ -36,7 +37,9 @@ class Admin extends Component {
                     <h1>Admin</h1>
                 </header>
                 <div>
+                    <Tooltip title='Return to portfolio'>
                     <Button onClick={this.handleNavigate} variant='contained'><Home /></Button>
+                    </Tooltip>
                     <TextFields />
                 </div>
                 <div>
