@@ -68,7 +68,7 @@ Place thumbnail images in the `public/images` folder.
 
 - [x] Client side route that displays a form allowing you to add a new project to your portfolio
 - [x] Include a drop down menu with a list of tags
-- [ ] Send data to the server and notify the user of success or failure
+- [x] Send data to the server and notify the user of success or failure
 - [ ] List projects by name and allow the user to delete them
 - [x] Include a button that navigates to the project page
 
