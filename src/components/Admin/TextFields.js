@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+// import compose from 'recompose/compose';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Select from '@material-ui/core/Select';
 
 const styles = theme => ({
     container: {
@@ -36,46 +39,112 @@ const styles = theme => ({
 
 const tag = [
     {
-        value: 'React',
+        value: 1,
         label: 'React',
     },
     {
-        value: 'jQuery',
+        value: 2,
         label: 'jQuery',
     },
     {
-        value: 'Node',
+        value: 3,
         label: 'Node',
     },
     {
-        value: 'SQL',
+        value: 4,
         label: 'SQL',
     },
     {
-        value: 'Redux',
+        value: 5,
         label: 'Redux',
     },
     {
-        value: 'HTML',
+        value: 6,
         label: 'HTML',
     },
 ];
 
-class TextFields extends React.Component {
+class TextFields extends Component {
     state = {
         name: 'Project Name',
         date: 'Date (YYYY/MM/DD)',
-        tag: 'Select a Tag',
+        tag: '',
         github: 'GitHub URL',
         website: 'Website URL (Optional)',
         description: 'Description',
     };
 
-    handleChange = name => event => {
+    // componentDidMount() {
+    //     this.getTags();
+    //     // this.getProjects();
+    // }
+
+    // getTags = () => {
+    //     const action = { type: 'GET_TAGS' };
+    //     this.props.dispatch(action);
+    // }
+
+    // getProjects = () => {
+    //     const action = { type: 'FETCH_PROJECTS' };
+    //     this.props.dispatch(action);
+    // }
+
+    handleNameChange = event => {
         this.setState({
-            [name]: event.target.value,
+            name: event.target.value,
         });
     };
+
+    handleDateChange = event => {
+        this.setState({
+            date: event.target.value,
+        });
+    };
+
+    handleTagChange = event => {
+        this.setState({
+            tag: event.target.value,
+        });
+    };
+
+    handleGitHubChange = event => {
+        this.setState({
+            github: event.target.value,
+        });
+    };
+
+    handleWebsiteChange = event => {
+        this.setState({
+            website: event.target.value,
+        });
+    };
+
+    handleDescriptionChange = event => {
+        this.setState({
+            description: event.target.value,
+        });
+    };
+
+    handleAddProject = event => {
+        event.preventDefault();
+        const action = ({ type: 'ADD_PROJECT', payload: this.state });
+        this.props.dispatch(action);
+        this.setState({
+            name: 'Project Name',
+            date: 'Date (YYYY/MM/DD)',
+            github: 'GitHub URL',
+            tag: '',
+            website: 'Website URL (Optional)',
+            description: 'Description',
+        });
+    }
+
+    // handleAddTag = event => {
+    //     event.preventDefault();
+    //     const action = ({ type: 'ADD_TAG' })
+    // }
+
+
 
     render() {
         const { classes } = this.props;
@@ -88,7 +157,7 @@ class TextFields extends React.Component {
                     label="Required"
                     className={classes.textField}
                     value={this.state.name}
-                    onChange={this.handleChange('name')}
+                    onChange={this.handleNameChange}
                     margin="normal"
                     variant="outlined"
                 />
@@ -98,7 +167,7 @@ class TextFields extends React.Component {
                     label="Required"
                     className={classes.textField}
                     value={this.state.date}
-                    onChange={this.handleChange('date')}
+                    onChange={this.handleDateChange}
                     margin="normal"
                     variant="outlined"
                 />
@@ -106,12 +175,11 @@ class TextFields extends React.Component {
                     required
                     id="outlined-name"
                     select
-                    label="Required"
+                    label="Select a tag"
                     className={classes.textField}
                     value={this.state.tag}
-                    onChange={this.handleChange('tag')}
+                    onChange={this.handleTagChange}
                     variant='outlined'
-                    margin="normal"
                     SelectProps={{
                         MenuProps: {
                             className: classes.menu,
@@ -126,13 +194,16 @@ class TextFields extends React.Component {
                         </MenuItem>
                     ))}
                 </TextField>
+
+
+
                 <TextField
                     required
                     id="outlined-github"
                     label="Required"
                     className={classes.textField}
                     value={this.state.github}
-                    onChange={this.handleChange('github')}
+                    onChange={this.handleGitHubChange}
                     margin="normal"
                     variant="outlined"
                 />
@@ -141,7 +212,7 @@ class TextFields extends React.Component {
                     label="Website URL (Optional)"
                     className={classes.textField}
                     value={this.state.website}
-                    onChange={this.handleChange('website')}
+                    onChange={this.handleWebsiteChange}
                     margin="normal"
                     variant="outlined"
                 />
@@ -151,12 +222,12 @@ class TextFields extends React.Component {
                     label="Required"
                     className={classes.descriptionField}
                     value={this.state.description}
-                    onChange={this.handleChange('description')}
+                    onChange={this.handleDescriptionChange}
                     margin="normal"
                     variant="outlined"
                 />
                 <Button className={classes.button}
-                    variant='contained'>Submit</Button>
+                    onClick={this.handleAddProject} variant='contained'>Submit</Button>
 
             </form>
         );
@@ -167,4 +238,8 @@ TextFields.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TextFields);
+const mapStoreToProps = reduxStore => ({
+    reduxStore,
+});
+
+export default connect(mapStoreToProps)(withStyles(styles)(TextFields));

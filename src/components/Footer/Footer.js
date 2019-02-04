@@ -6,7 +6,7 @@ class Footer extends Component {
         return (
             <footer id='app-footer'>
                 <div id='footer-container'>
-                    <h1 id='footer-text'>footer</h1>
+                    <p id='footer-text'>Copyright James C. Tucker 2019</p>
                 </div>
             </footer>
         )

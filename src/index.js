@@ -14,6 +14,8 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_PROJECTS', fetchProjects);
+    yield takeEvery('ADD_PROJECT', addProject);
+    yield takeEvery('GET_TAGS', getTags)
 }
 
 // Create sagaMiddleware
@@ -31,7 +33,27 @@ function* fetchProjects() {
     }
 }
 
+function* addProject(action) {
+    try {
+        yield axios.post('/text-fields', action.payload);
+        const nextAction = { type: 'FETCH_PROJECTS' };
+        yield put(nextAction);
+    }
+    catch (error) {
+        yield console.log('error in addProject saga', error);
+    }
+}
 
+function* getTags(action) {
+    try {
+        const response = yield axios.get('/');
+        const tags = { type: 'SET_TAGS', payload: response.data };
+        yield put(tags);
+    } catch (error) {
+        console.log('Error gettings tags.');
+        alert('there was a problem getting tags.')
+    }
+}
 
 // Used to store projects returned from the server
 const projects = (state = [], action) => {
