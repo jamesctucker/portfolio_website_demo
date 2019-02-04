@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
     const newProject = req.body;
-    const queryText = `INSERT INTO "projects" ("name", "description", 
+    const queryText = `INSERT INTO "projects" ("title", "description", 
                      "date_completed", "github", "tag_id", "website")                   
                     VALUES ($1, $2, $3, $4, $5, $6);`;
     const queryValues = [
