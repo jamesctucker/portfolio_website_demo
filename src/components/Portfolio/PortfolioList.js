@@ -12,6 +12,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import Chip from '@material-ui/core/Chip';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 
 class PortfolioList extends Component {
@@ -34,10 +37,6 @@ class PortfolioList extends Component {
                                 {this.props.results.title}
                                 {/* this is where the project title will go */}
                             </Typography>
-                            <Typography id='project-tag' variant='p'>
-                                [{this.props.results.name}]
-                                {/* this is where the project title will go */}
-                            </Typography>
                             <Typography id='project-description' component="p">
                                 {this.props.results.description}
                                 {/* this is where the project description will go */}
@@ -57,10 +56,18 @@ class PortfolioList extends Component {
                                 Website
                             </Button>
                         </Link>
+                        <Tooltip title='The main technology used'>
+                            <Chip
+
+                                label={this.props.results.name}
+                                variant='outlined'
+                                id='tag-chip'
+                            />
+                        </Tooltip>
                     </CardActions>
 
                 </Card>
-            </Grid>
+            </Grid >
         )
     }
 }
